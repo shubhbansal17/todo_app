@@ -11,7 +11,12 @@ Flask is only used as a thin web layer that calls these functions.
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder='../templates',
+    static_folder='../public',
+    static_url_path=''
+)
 app.secret_key = "change-this-secret-key"  # needed for flash messages
 
 # ---------------------------------------------------------------------
